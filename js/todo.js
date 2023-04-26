@@ -1,19 +1,12 @@
-console.log("to do Script");
 
-
-let sesstion_array = [];
+let sesstion_array = ["hassan"];
 let taskes_field = document.querySelector('.taskes-field')
 let add_task_textfild =document.getElementById('add_task_textfild');
 let button_addon2 = document.getElementById('button-addon2');
 
-
-// sessionStorage.setItem("to_do_list",JSON.stringify(arr));
-// let sesstion_array = JSON.parse(sessionStorage.getItem('to_do_list'));
-
 window.onload = function () {
- sesstion_array = JSON.parse(sessionStorage.getItem('to_do_list'));
-  console.log(sesstion_array);
-  if (sesstion_array.length !=0) {
+ sesstion_array = (JSON.parse(sessionStorage.getItem('to_do_list')) != null)?JSON.parse(sessionStorage.getItem('to_do_list')): [ ] ;
+  if (sesstion_array != null) {
   
     sesstion_array.forEach(element => {
       taskes_field.innerHTML += `
@@ -23,7 +16,7 @@ window.onload = function () {
           <input class="form-check-input mt-0" type="checkbox" aria-label="Checkbox for following text input"  onchange = 'toggle_checked(this)'>
         </div>
         <textarea class="form-control" disabled>${element}</textarea>
-        <button class="btn" onclick='delet_task(this)'><img src="../img/trash2.gif" ></button>
+        <button class="btn" onclick='delet_task(this)'><img src="img/trash2.gif" ></button>
       </div>
     </div>
     `;
@@ -34,7 +27,8 @@ window.onload = function () {
 
 function  add_to_session(value) {
  
-    sesstion_array.push(value);
+ let c_value = (value !=null) ? value:" ";
+    sesstion_array.push(c_value);
     console.log("added ",sesstion_array);
   sessionStorage.setItem("to_do_list",JSON.stringify(sesstion_array));
 }
@@ -61,9 +55,10 @@ button_addon2.addEventListener('click',()=>{
     if (add_task_textfild.value.length == 0 ) {
         alert('Cannot Add Empty Task, Pleace Add One');
      }else{
+
          add_task(add_task_textfild.value);
      }
-     add_task_textfild.value = ""
+     add_task_textfild.value = " "
 });
 
 add_task_textfild.addEventListener('keypress',(event)=>{
@@ -92,7 +87,7 @@ function add_task(task) {
         <input class="form-check-input mt-0" type="checkbox" aria-label="Checkbox for following text input"  onchange = 'toggle_checked(this)'>
       </div>
       <textarea class="form-control" disabled>${task}</textarea>
-      <button class="btn" onclick='delet_task(this)'><img src="../img/trash2.gif" ></button>
+      <button class="btn" onclick='delet_task(this)'><img src="img/trash2.gif" ></button>
     </div>
   </div>
   `;
