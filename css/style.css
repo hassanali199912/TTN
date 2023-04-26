@@ -1,0 +1,403 @@
+:root {
+    --main-color: #E06244;
+    --light-gray-color: #8F8F8F;
+    --dark-gray-color: #494747;
+    --white-color: #D9D9D9;
+    --dark-black-color: #333;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* #region nav */
+.navbar {
+    background-color: var(--white-color);
+}
+
+.navbar-brand img {
+    width: 50px;
+    margin-left: 5rem;
+
+}
+
+.navbar-toggler {
+    margin-right: 5rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--dark-black-color);
+    border-left: 1px solid var(--dark-black-color);
+    padding: 1rem;
+    margin: 1em;
+    transition: all .5s ease;
+
+}
+
+.nav-link:hover {
+    box-shadow: 1px 1px 4px var(--dark-gray-color);
+    border: 1px solid var(--dark-black-color);
+    border-radius: 10px;
+}
+
+.nav-link img {
+    width: 50px;
+}
+
+
+@media only screen and (max-width: 950px) {
+    .navbar-brand img {
+
+        margin-left: 2rem;
+
+    }
+
+    .navbar-toggler {
+        margin-right: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .navbar-brand img {
+
+        margin-left: 1rem;
+
+    }
+
+    .navbar-toggler {
+        margin-right: 1rem;
+    }
+
+}
+
+/* #endregion nav */
+
+/* #region main */
+
+.title h1 {
+    text-align: center;
+    padding-top: 1em;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.title span {
+    color: var(--dark-black-color);
+}
+
+.title p {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+
+}
+
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.card {
+    width: 300px;
+    height: 220px;
+    text-align: center;
+    margin: 1em auto;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.card h2 {
+    font-weight: bold;
+}
+
+.card p {
+    padding: 1em;
+    font-size: 12px;
+}
+
+.tools div:nth-child(1) .card {
+    background-color: var(--main-color);
+}
+
+.tools div:nth-child(2) .card {
+    background-color: var(--dark-black-color);
+    color: var(--white-color);
+
+}
+
+.card:hover {
+    box-shadow: 1px 1px 5px var(--dark-black-color);
+    transform: scale(1.2);
+
+}
+
+.card img {
+    transition: all .5s ease;
+}
+
+.card:hover img {
+    rotate: 360deg;
+
+}
+
+.card img {
+    width: 100px;
+    margin: auto;
+    padding: 1em;
+}
+
+/* #endregion main */
+
+/* #region todo-main */
+.main-header span {
+    color: var(--main-color);
+}
+
+.title h1 img {
+    width: 60px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.add-field .input-group {
+    background-color: var(--dark-gray-color);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.add-field .input-group button {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: .5rem 2rem;
+}
+
+.taskes-field div {
+    margin: 1em 0;
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+.taskes-field div .title {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--main-color);
+}
+
+.taskes-field div .input-group {
+    background-color: var(--light-gray-color);
+    padding: .1rem;
+}
+
+.taskes-field div .input-group button img {
+    width: 30px !important;
+
+}
+
+.taskes-field div .input-group-text {
+    border: 0;
+    background-color: transparent;
+}
+
+.taskes-field div .input-group-text input {
+    padding: .7rem;
+}
+
+.taskes-field div .input-group textarea {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    color: #fff;
+    resize: none;
+}
+
+.checked div {
+    text-decoration: line-through;
+    background-color: var(--main-color) !important;
+}
+
+
+@keyframes delet {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
+}
+
+/* #endregion todo-main */
+
+/* #region stopwatch-main */
+.timers-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    padding: .4em 0;
+    gap: .5em;
+    flex-wrap: wrap;
+}
+
+.timers-buttons button {
+    width: 16em;
+    background-color: var(--light-gray-color);
+    color: #fff;
+    border-radius: 0;
+}
+
+.timers-buttons button:hover {
+    background-color: var(--white-color);
+    color: var(--main-color);
+    border-color: var(--dark-black-color);
+}
+
+.timers-buttons .btn-active {
+    background-color: var(--white-color);
+    color: var(--main-color);
+    border-color: var(--dark-black-color);
+}
+
+.timers-buttons button:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.timers-buttons button:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.input-timer {
+    height: 20vh;
+    margin: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input-timer div input {
+    width: 3em;
+    font-size: 2em;
+    text-align: center;
+    margin: 0 1em;
+
+}
+
+.input-timer div span {
+    font-size: 4em;
+    align-self: center;
+}
+
+.input-timer div input::-webkit-inner-spin-button {
+    /* -webkit-appearance: textfield;  // defult*/
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.control-btn div button {
+    width: 8em;
+    border: 1px solid var(--dark-black-color);
+    padding: 0.5em 2em;
+}
+.control-btn div button:nth-child(1) {
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
+.control-btn div button:nth-child(1):hover {
+    background-color: var(--white-color);
+    color: var(--main-color);
+}
+.control-btn div button:nth-child(2) {
+    background-color: var(--dark-gray-color);
+    color: var(--white-color);
+}
+.control-btn div button:nth-child(2):hover {
+    background-color: var(--white-color);
+    color: var(--dark-gray-color);
+}
+.control-btn div button:nth-child(3):hover {
+    background-color: var(--white-color);
+    color: var(--dark-gray-color);
+}
+
+@media only screen and (max-width:950px) {
+    .timers-buttons button {
+        width: 10em;
+
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .timers-buttons button {
+        width: 12em;
+
+    }
+
+    .timers-buttons {
+
+        border-radius: 0;
+        margin: 0 1em;
+
+    }
+
+    .timers-buttons button:first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .timers-buttons button:last-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+}
+
+
+
+
+/* #endregion stopwatch-main */
+
+/* #region notepad-main */
+#notepad-body{
+    overflow-y: hidden;
+}
+.notepad-main .title h1{
+    padding: 0;
+}
+#text_area{
+    width: 100%;
+    min-height: calc(100vh - 75px) ;
+    resize: none;
+    padding: 1em;
+    font-size: 1em;
+    background-image: url('../img/surface-white-planks.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-color: transparent;
+    margin: 0;
+}
+
+
+/* #endregion notepad-main */

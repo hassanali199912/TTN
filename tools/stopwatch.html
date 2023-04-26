@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="shortcut icon" href="https://d33wubrfki0l68.cloudfront.net/612a64fdeb3f35b4b7490359/ce25339f8909a4f77b8e/logo(1).png" type="image/x-icon">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <!-- BootStrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img
+          src="https://d33wubrfki0l68.cloudfront.net/612a64fdeb3f35b4b7490359/ce25339f8909a4f77b8e/logo(1).png"
+          alt="my-loge" srcset=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+
+              <a class="nav-link" aria-current="page" href="tools/todolist.html"> <img src="img/checklist.gif">To Do
+                List</a>
+            </li>
+            <li class="nav-item">
+
+              <a class="nav-link" aria-current="page" href="tools/stopwatch.html"> <img
+                  src="img/stopwatch.gif">Stopwatch</a>
+            </li>
+            <li class="nav-item">
+
+              <a class="nav-link" aria-current="page" href="tools/notepad.html"> <img src="img/notepad.gif">Notepad</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main class="stopwatch-main">
+    <div class="container">
+      <div class="row">
+        <div class="col title">
+          <h1 class="main-header"><img src="../img/stopwatch.gif"><span>
+              Stopwatch
+            </span></h1>
+          <p>You can create a timer for work, 25 minutes to work and 5 minutes to rest, according to the Promodo method ⏲️</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col timers-buttons">
+          <button class="btn btn-active" data-timer="Promodo" onclick="set_Timer(this)">Promodo's</button>
+          <button class="btn" data-timer="long"  onclick="set_Timer(this)">Long Break</button>
+          <button class="btn" data-timer="short"  onclick="set_Timer(this)">Short Break</button>
+          <button class="btn" data-timer="custom"  onclick="set_Timer(this)">Custom Timer</button>
+        </div>
+      </div>
+      <div class="row input-timer">
+        <div class="col-6 m-auto  d-flex justify-content-center ">
+          <input type="number" id="minutes" maxlength="2" oninput="max_length_input(this)" placeholder="00" disabled value="25"> 
+          <span> : </span>
+         <input type="number" id="seconds" maxlength="2" oninput="max_length_input(this)" placeholder="00" disabled value="00">
+          
+        </div>
+      </div>
+      <div class="row control-btn">
+        <div class="col-6 m-auto d-flex justify-content-center align-items-center gap-4">
+          <button class="btn " onclick="start_timer()">Start</button>
+          <button class="btn " onclick="stop_timer()">Stop</button>
+          <button class="btn " onclick="reset()">Reset</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script src="../js/stopwatch.js"></script>
+</body>
+</html>
